@@ -32,11 +32,11 @@ var mainState = {
 		
 		//it is a variable which counts deaths of the player.
 		//we are incrementing it when player collides with enemy or player exits the world.
-		this.deathCounter = game.add.text(400, 300, 'deaths: 0', { font: '18px Arial', fill: '#ffffff' });
+		this.deathCounter = game.add.text(395, 300, 'deaths: 0', { font: '18px Arial', fill: '#ffffff' });
         this.deaths = 0;
 		
 		//its a varible which is set to 120 seconds and decrements by 1, every second.
-		this.timerCount = game.add.text(400, 30, 'timer: 120', { font: '18px Arial', fill: '#ffffff' });
+		this.timerCount = game.add.text(390, 30, 'timer: 120', { font: '18px Arial', fill: '#ffffff' });
         this.timer = 120;
 
         this.enemies = game.add.group();
@@ -154,9 +154,9 @@ var mainState = {
 		this.deaths += 1;
         this.deathCounter.text = 'deaths: ' + this.deaths;
 		var playerPosition = [
-            {x: 140, y: 60}, {x: 360, y: 60}, 
-            {x: 60, y: 140}, {x: 440, y: 140}, 
-            {x: 130, y: 300}, {x: 370, y: 300}
+            {x: 170, y: 60}, {x: 300, y: 60}, 
+            {x: 90, y: 140}, {x: 400, y: 140}, 
+            {x: 100, y: 300}, {x: 350, y: 300}
         ];
 
         for (var i = 0; i < playerPosition.length; i++) {
