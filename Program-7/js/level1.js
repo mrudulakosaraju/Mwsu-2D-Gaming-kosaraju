@@ -1,4 +1,4 @@
-var playState = {
+var level1 = {
 
     create: function() { 
 		if (!game.device.desktop) {
@@ -70,7 +70,7 @@ var playState = {
         this.movePlayer(); 
 
         if (!this.player.inWorld) {
-            this.playerDie();
+            game.state.start('level2');
         }
 
         if (this.nextEnemy < game.time.now) {
@@ -241,8 +241,8 @@ var playState = {
 
 		// Enable collisions for the first tilset element (the blue wall)
 		this.map.setCollision(1);        
-    },
-
+    },	
+	
     playerDie: function() {
         this.player.kill();
         

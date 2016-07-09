@@ -2,23 +2,22 @@ var menuState = {
 
     create: function() { 
         game.add.image(0, 0, 'background');
-
-        if (!localStorage.getItem('bestScore')) {
+		
+		if (!localStorage.getItem('bestScore')) {
             localStorage.setItem('bestScore', 0);
         }
 
         if (game.global.score > localStorage.getItem('bestScore')) {
             localStorage.setItem('bestScore', game.global.score);
         }
-
         var nameLabel = game.add.text(game.width/2, -50, 'Super Coin Box', { font: '70px Geo', fill: '#ffffff' });
         nameLabel.anchor.setTo(0.5, 0.5);
-        game.add.tween(nameLabel).to({y: 80}, 1000).easing(Phaser.Easing.Bounce.Out).start();
-
-        var text = 'score: ' + game.global.score + '\nbest score: ' + localStorage.getItem('bestScore');
+        game.add.tween(nameLabel).to({y: 80}, 1000).easing(Phaser.Easing.Bounce.Out).start();        
+		
+		var text = 'score: ' + game.global.score + '\nbest score: ' + localStorage.getItem('bestScore');
         var scoreLabel = game.add.text(game.width/2, game.height/2, text, { font: '25px Arial', fill: '#ffffff', align: 'center' });
         scoreLabel.anchor.setTo(0.5, 0.5);
-
+		
         // Store the relevant text based on the device used
 		var txt;
 		if (game.device.desktop) {
@@ -27,10 +26,10 @@ var menuState = {
 		else {
 			txt = 'touch the screen to start';
 		}
-		// Display the text variable
+		// Display the txt variable
 		var startLabel = game.add.text(game.width/2, game.height-80, txt, { font: '25px Arial', fill: '#ffffff' });
         startLabel.anchor.setTo(0.5, 0.5);
-        game.add.tween(startLabel).to({angle: -2}, 500).to({angle: 2}, 1000).to({angle: 0}, 500).loop().start(); 
+        game.add.tween(startLabel).to({angle: -2}, 500).to({angle: 2}, 1000).to({angle: 0}, 500).loop().start();		
 		
 		if (!game.device.desktop) {
 			game.input.onDown.add(this.start, this);
@@ -53,6 +52,6 @@ var menuState = {
 			// It means we want to mute the game, so we don't start the game
 			return;
 		}
-        game.state.start('play');   
+        game.state.start('level1');   
     },
 };

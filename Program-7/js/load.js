@@ -13,6 +13,7 @@ var loadState = {
         game.load.image('coin', 'assets/coin.png');
 		game.load.image('tileset', 'assets/tileset.png');
 		game.load.tilemap('map', 'assets/map.json', null, Phaser.Tilemap.TILED_JSON);
+		game.load.tilemap('map2', 'assets/map2.json', null, Phaser.Tilemap.TILED_JSON);
         //game.load.image('wallV', 'assets/wallVertical.png');
         //game.load.image('wallH', 'assets/wallHorizontal.png');
         game.load.image('background', 'assets/background.png'); 
